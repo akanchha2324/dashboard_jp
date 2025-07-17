@@ -1,13 +1,14 @@
-import './App.css'
+import MainLayout from "./layouts/MainLayout";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <div>
-        Dashboard
+      <div className="app">
+        <MainLayout />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
