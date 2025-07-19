@@ -85,7 +85,7 @@ export const REVENUE_GRAPH_CONFIG = {
       type: "line",
       smooth: true,
       lineStyle: {
-        color: "#A3C2F5",
+        color: "#A8C5DA",
         width: 3,
       },
       symbol: "none",
@@ -96,8 +96,8 @@ export const REVENUE_GRAPH_CONFIG = {
       type: "line",
       smooth: true,
       lineStyle: {
-        color: "#000",
-        width: 4,
+        color: "#1C1C1C",
+        width: 3,
       },
       symbol: "none",
       data: [12e6, 8e6, 8e6, 14e6, null, null],
@@ -108,8 +108,8 @@ export const REVENUE_GRAPH_CONFIG = {
       type: "line",
       smooth: true,
       lineStyle: {
-        color: "#000",
-        width: 4,
+        color: "#1C1C1C",
+        width: 3,
         type: "dashed",
       },
       symbol: "none",
