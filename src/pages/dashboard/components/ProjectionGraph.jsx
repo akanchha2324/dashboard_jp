@@ -1,8 +1,8 @@
 import BarGraph from "../../../components/barGraph/BarGraph";
-function ProjectionGraph({ projectionGraphConfig }) {
+function ProjectionGraph({ config }) {
   return (
     <>
-      <BarGraph {...projectionGraphConfig} />
+      <BarGraph {...config} />
     </>
   );
 }

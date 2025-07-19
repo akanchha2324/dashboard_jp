@@ -23,6 +23,7 @@ export const PROJECTION_GRAPH_CONFIG = {
     axisLabel: {
       color: "#999",
     },
+    axisTick: { show: false },
   },
   yAxis: {
     type: "value",
