@@ -25,7 +25,7 @@ function Header({ toggleSideNav, toggleRightPanel}) {
             <AiTwotoneStar size={20} />
           </button>
         </div>
-        <div className="breadcrumb">Bread crumb</div>
+        <div className="breadcrumb text-sm"><span className="text-gray-300"> Dashboard / </span> Default</div>
       </div>
       <div className="right_items flex items-center gap-1">
         <div className="search relative">
