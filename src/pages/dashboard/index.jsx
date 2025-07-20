@@ -1,9 +1,11 @@
-import Default from "./components/Default";
+import { Outlet } from "react-router-dom";
 
 function Dashboard() {
-    return <>
-        <Default/>
-    </> 
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
 
 export default Dashboard;
