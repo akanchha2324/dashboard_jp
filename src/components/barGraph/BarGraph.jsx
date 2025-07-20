@@ -44,7 +44,7 @@ function BarGraph({
     series,
   ]);
 
-  return <div className="w-full h-[250px] rounded-lg" ref={chartRef} />;
+  return <div className="w-full h-[250px] rounded-2xl" ref={chartRef} />;
 }
 
 export default BarGraph;

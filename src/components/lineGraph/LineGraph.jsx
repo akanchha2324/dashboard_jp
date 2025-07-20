@@ -24,18 +24,35 @@ function LineGraph({
       yAxis,
       series,
     };
-    if(xAxis && yAxis) {
-        chart.setOption(option);
+    if (xAxis && yAxis) {
+      chart.setOption(option);
     }
+    // Resize handler
+    const handleResize = () => {
+      chart.resize();
+    };
 
-    console.log("abc")
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       chart.dispose();
     };
   }, [title, backgroundColor, legend, grid, xAxis, yAxis, series]);
 
-  return <div ref={chartRef} style={{ height: 300, width: "100%" }} />;
+  return (
+    <div
+      ref={chartRef}
+      className="rounded-2xl"
+      style={{
+        height: "100%",
+        width: "100%",
+        minHeight: "352px",
+        borderRadius: "16px",
+      }}
+    />
+  );
 }
 
 export default LineGraph;
