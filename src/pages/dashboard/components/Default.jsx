@@ -3,7 +3,8 @@ import ProjectionGraph from "./ProjectionGraph";
 import RevenueGraph from "./RevenueGraph";
 import RevenueByLocation from "./RevenueByLocation";
 import TopSellingProducts from "./TopSellingProducts";
-import { SUMMARIES, LOCATIONS, TOP_SELLING_PRODUCTS } from "../../../mocks";
+import TotalSales from "./TotalSales";
+import { SUMMARIES, LOCATIONS, TOP_SELLING_PRODUCTS, TOTAL_SALES } from "../../../mocks";
 import {
   PROJECTION_GRAPH_CONFIG,
   REVENUE_GRAPH_CONFIG,
@@ -37,9 +38,9 @@ function Default() {
           <TopSellingProducts products={TOP_SELLING_PRODUCTS} />
         </div>
         <div className="flex-1 md:flex-1/3">
-          <RevenueByLocation
+          <TotalSales
             config={REVENUE_MAP_CONFIG}
-            locations={LOCATIONS}
+            totalSales={TOTAL_SALES}
           />
         </div>
       </div>
