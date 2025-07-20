@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 
-function TotalSalesChart({
-    data
-}) {
+function TotalSalesChart({ data }) {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -17,11 +15,11 @@ function TotalSalesChart({
         backgroundColor: "rgba(28, 28, 28, 0.8)",
         padding: 1,
         textStyle: {
-            color: '#fff',
-            fontSize: '12px',
-            lineHeight: '18px'
+          color: "#fff",
+          fontSize: "12px",
+          lineHeight: "18px",
         },
-        borderColor: '#000',
+        borderColor: "#000",
         formatter: "{d}%",
       },
       series: [
@@ -47,7 +45,7 @@ function TotalSalesChart({
       chartInstance.current?.dispose();
       observer.disconnect();
     };
-  }, []);
+  }, [data]);
 
   return (
     <div className="bg-[#f7f8fa] rounded-xl p-4 w-[250px]">
