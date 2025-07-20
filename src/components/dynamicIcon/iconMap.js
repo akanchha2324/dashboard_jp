@@ -5,7 +5,13 @@ import { IoBookOutline, IoBugOutline } from "react-icons/io5";
 import { LuBookUser, LuUserRound } from "react-icons/lu";
 import { MdAccountCircle, MdChevronRight } from "react-icons/md";
 import { FaIdBadge, FaUsers, FaRegNewspaper, FaComments } from "react-icons/fa";
-import { PiBroadcast } from "react-icons/pi";
+import {
+  PiBroadcast,
+  PiChatsTeardropDuotone,
+  PiIdentificationCard,
+  PiNotebook,
+  PiUsersThreeDuotone,
+} from "react-icons/pi";
 export const ICON_MAP = {
   VscPieChart,
   FiShoppingBag,
@@ -21,4 +27,8 @@ export const ICON_MAP = {
   IoBugOutline,
   LuUserRound,
   PiBroadcast,
+  PiChatsTeardropDuotone,
+  PiIdentificationCard,
+  PiNotebook,
+  PiUsersThreeDuotone,
 };

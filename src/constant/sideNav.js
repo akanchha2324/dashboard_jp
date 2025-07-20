@@ -57,10 +57,14 @@ export const SIDE_NAV_ITEMS = [
           },
         ],
       },
-      { label: "Account", id: "pages_account", icon: "FaIdBadge" },
-      { label: "Corporate", id: "pages_corporate", icon: "FaUsers" },
-      { label: "Blog", id: "pages_blog", icon: "FaRegNewspaper" },
-      { label: "Social", id: "pages_social", icon: "FaComments" },
+      { label: "Account", id: "pages_account", icon: "PiIdentificationCard" },
+      {
+        label: "Corporate",
+        id: "pages_corporate",
+        icon: "PiUsersThreeDuotone",
+      },
+      { label: "Blog", id: "pages_blog", icon: "PiNotebook" },
+      { label: "Social", id: "pages_social", icon: "PiChatsTeardropDuotone" },
     ],
   },
 ];
