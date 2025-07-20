@@ -7,12 +7,12 @@ import { PROJECTION_GRAPH_CONFIG, REVENUE_GRAPH_CONFIG, REVENUE_MAP_CONFIG } fro
 
 function Default() {
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <Summary summaries={SUMMARIES} />
       <ProjectionGraph config={PROJECTION_GRAPH_CONFIG} />
       <RevenueGraph config={REVENUE_GRAPH_CONFIG} />
       <RevenueByLocation config={REVENUE_MAP_CONFIG} locations={LOCATIONS}/>
-    </>
+    </div>
   );
 }
 
