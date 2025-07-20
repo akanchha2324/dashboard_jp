@@ -4,12 +4,17 @@ export const SIDE_NAV_ITEMS = [
     label: "Dashboards",
     id: "dashboard",
     items: [
-      { label: "Default", icon: "VscPieChart", id: "dashboard_default" },
+      {
+        label: "Default",
+        icon: "VscPieChart",
+        id: "dashboard_default",
+        path: "/dashboard",
+      },
       {
         label: "eCommerce",
         icon: "FiShoppingBag",
         id: "dashboard_e_commerce",
-        children: [],
+        path: "/dashboard/ecommerce",
       },
       {
         label: "Projects",

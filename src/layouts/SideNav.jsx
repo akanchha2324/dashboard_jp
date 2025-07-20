@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 import SideNavItem from "../components/sideNavItem/SideNavItem";
 import { SIDE_NAV_ITEMS } from "../constant";
@@ -7,7 +7,7 @@ import { SIDE_NAV_ITEMS } from "../constant";
 function SideNav({ isCollapsed }) {
   const [openMenus, setOpenMenus] = useState({});
   const [selectedMenu, setSelectedMenu] = useState("");
-
+  const navigate = useNavigate();
   function toggleMenu(menu) {
     setOpenMenus((prev) => ({
       ...prev,
@@ -15,15 +15,26 @@ function SideNav({ isCollapsed }) {
     }));
   }
 
+  function handleMenuClick({ id, path }) {
+    setSelectedMenu(id);
+    if (path) {
+      navigate(path);
+    }
+  }
+
   return (
-    <div className={`bg-white h-screen shadow-md flex flex-col ${!isCollapsed ? 'w-60' : 'w-12'}`}>
+    <div
+      className={`bg-white h-screen shadow-md flex flex-col ${
+        !isCollapsed ? "w-60" : "w-12"
+      }`}
+    >
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
           <div className="avatar">
             <MdAccountCircle size={20} />
           </div>
           {!isCollapsed && (
-            <span className="pl-2 text-sm/5 text-[#1C1C1C]">ByeWind</span>
+            <span className="pl-2 text-sm/5 text-[#1C1C1C]">Akanchha</span>
           )}
         </div>
       </div>
@@ -38,7 +49,7 @@ function SideNav({ isCollapsed }) {
               >
                 {!isCollapsed ? label : ""}
               </div>
-              {items.map(({ label, icon, id, children }) => {
+              {items.map(({ label, icon, id, children, path }) => {
                 return (
                   <SideNavItem
                     key={id}
@@ -49,8 +60,9 @@ function SideNav({ isCollapsed }) {
                     label={label}
                     children={children}
                     toggleMenu={toggleMenu}
-                    setSelectedMenu={setSelectedMenu}
+                    setSelectedMenu={handleMenuClick}
                     openMenus={openMenus}
+                    path={path}
                   />
                 );
               })}

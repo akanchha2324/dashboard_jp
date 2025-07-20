@@ -11,6 +11,7 @@ function SideNavItem({
   setSelectedMenu,
   toggleMenu,
   openMenus,
+  path,
 }) {
   return (
     <div className="flex flex-col overflow-y-auto">
@@ -19,7 +20,7 @@ function SideNavItem({
           selectedMenu === id ? "bg-gray-100" : ""
         }`}
         onClick={() => {
-          children ? toggleMenu(id) : setSelectedMenu(id);
+          children ? toggleMenu(id) : setSelectedMenu({id, path});
         }}
       >
         {showLabel && (
@@ -32,10 +33,10 @@ function SideNavItem({
           {showLabel ? <div className="px-2">{label}</div> : null}
         </div>
       </div>
-      <div className={`pl-4 transition-all duration-300 ${openMenus[id] ? 'min-h-10' : 'min-h-0'}`}>
+      <div className={`pl-4`}>
         {children &&
           openMenus[id] === true &&
-          children.map(({ label, icon, children, id }) => {
+          children.map(({ label, icon, children, id, path }) => {
             return (
               <SideNavItem
                 key={id}
@@ -48,6 +49,7 @@ function SideNavItem({
                 toggleMenu={toggleMenu}
                 setSelectedMenu={setSelectedMenu}
                 openMenus={openMenus}
+                path={path}
               />
             );
           })}

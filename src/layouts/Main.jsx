@@ -2,10 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/dashboard";
 import NotFound from "../components/notFound/NotFound";
 import { routesConfig } from "../pages/dashboard/routes";
-function Main() {
+function  Main() {
   return (
     <div className="p-6">
-      <BrowserRouter>
         <Routes>
           <Route path="dashboard" element={<Dashboard />}>
             {routesConfig.map((route, index) => {
@@ -27,7 +26,6 @@ function Main() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }
