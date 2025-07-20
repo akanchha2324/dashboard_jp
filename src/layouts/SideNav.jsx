@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 
-import { MdAccountCircle, MdChevronRight } from "react-icons/md";
+import { MdAccountCircle } from "react-icons/md";
 import SideNavItem from "../components/sideNavItem/SideNavItem";
 import { SIDE_NAV_ITEMS } from "../constant";
 
-const SideNav = () => {
-  const [collapsed, setCollapsed] = useState(false);
+function SideNav({ collapsed }) {
   const [openMenus, setOpenMenus] = useState({});
   const [selectedMenu, setSelectedMenu] = useState("");
-
-  function toggleCollapsed() {
-    setCollapsed(!collapsed);
-  }
 
   function toggleMenu(menu) {
     setOpenMenus((prev) => ({
@@ -21,11 +16,7 @@ const SideNav = () => {
   }
 
   return (
-    <div
-      className={`${
-        collapsed ? "w-20" : "w-64"
-      } transition-all duration-300 bg-white h-screen shadow-md flex flex-col z`}
-    >
+    <div className={`bg-white h-screen shadow-md flex flex-col`}>
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
           <div className="avatar">
@@ -35,13 +26,6 @@ const SideNav = () => {
             <span className="pl-2 text-sm/5 text-[#1C1C1C]">ByeWind</span>
           )}
         </div>
-
-        <button
-          onClick={toggleCollapsed}
-          className={`text-gray-500 ml-auto ${!collapsed ? "rotate-180" : ""}`}
-        >
-          <MdChevronRight size={20} />
-        </button>
       </div>
       <div>
         {SIDE_NAV_ITEMS.map(({ label, id, items }) => {
@@ -76,6 +60,6 @@ const SideNav = () => {
       </div>
     </div>
   );
-};
+}
 
 export default SideNav;
