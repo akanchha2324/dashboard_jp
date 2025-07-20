@@ -1,5 +1,5 @@
 import Dashboard from "../pages/dashboard";
-function MainLayout() {
+function Main() {
   return (
     <div className="p-4">
       <Dashboard />
@@ -7,4 +7,4 @@ function MainLayout() {
   );
 }
 
-export default MainLayout;
+export default Main;

@@ -4,7 +4,7 @@ import { MdAccountCircle } from "react-icons/md";
 import SideNavItem from "../components/sideNavItem/SideNavItem";
 import { SIDE_NAV_ITEMS } from "../constant";
 
-function SideNav({ collapsed }) {
+function SideNav({ isCollapsed }) {
   const [openMenus, setOpenMenus] = useState({});
   const [selectedMenu, setSelectedMenu] = useState("");
 
@@ -16,13 +16,13 @@ function SideNav({ collapsed }) {
   }
 
   return (
-    <div className={`bg-white h-screen shadow-md flex flex-col`}>
+    <div className={`bg-white h-screen shadow-md flex flex-col ${!isCollapsed ? 'w-60' : 'w-12'}`}>
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
           <div className="avatar">
             <MdAccountCircle size={20} />
           </div>
-          {!collapsed && (
+          {!isCollapsed && (
             <span className="pl-2 text-sm/5 text-[#1C1C1C]">ByeWind</span>
           )}
         </div>
@@ -33,10 +33,10 @@ function SideNav({ collapsed }) {
             <div key={id}>
               <div
                 className={`text-xs text-gray-400 px-4 mt-4 mb-2 ${
-                  collapsed ? "h-4" : ""
+                  isCollapsed ? "h-4" : ""
                 }`}
               >
-                {!collapsed ? label : ""}
+                {!isCollapsed ? label : ""}
               </div>
               {items.map(({ label, icon, id, children }) => {
                 return (
@@ -44,7 +44,7 @@ function SideNav({ collapsed }) {
                     key={id}
                     id={id}
                     selectedMenu={selectedMenu}
-                    showLabel={!collapsed}
+                    showLabel={!isCollapsed}
                     icon={icon}
                     label={label}
                     children={children}

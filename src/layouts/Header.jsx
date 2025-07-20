@@ -8,14 +8,14 @@ import {
 import { AiTwotoneStar } from "react-icons/ai";
 import { MdKeyboardCommandKey, MdSearch } from "react-icons/md";
 
-function Header({ toggleSideNav }) {
+function Header({ toggleSideNav, toggleRightPanel}) {
   const [search, setSearch] = useState();
 
   useEffect(() => {
     //Add  search logic
   }, [search]);
   return (
-    <div className="w-full h-16 py-5 px-7 shadow-md flex items-center justify-between">
+    <div className="w-full h-16 py-5 px-7 shadow-md flex items-center justify-between border-b border-gray-200">
       <div className="left_items flex items-center gap-1">
         <div className="actions flex gap-2 mr-4">
           <button className="border-none" onClick={toggleSideNav}>
@@ -53,7 +53,7 @@ function Header({ toggleSideNav }) {
           <button className="border-none">
             <PiBellDuotone size={20} />
           </button>
-          <button className="border-none">
+          <button className="border-none" onClick={toggleRightPanel}>
             <PiSidebar size={20} />
           </button>
         </div>
