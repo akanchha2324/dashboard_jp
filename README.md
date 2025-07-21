@@ -46,4 +46,4 @@ npm run dev
   Created interactive charts using ECharts, and faced challenges in handling responsive resizing and tooltip customization.
 
 ## Link
-- https://akanchha-dashboard-jp.netlify.app/dashboard
+- https://akanchha-dashboard-jp.netlify.app/
